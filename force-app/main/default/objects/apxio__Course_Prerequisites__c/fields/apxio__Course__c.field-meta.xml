@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>apxio__Course__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The course that requires a pre-req</description>
+    <label>Course</label>
+    <referenceTo>apxio__Course__c</referenceTo>
+    <relationshipLabel>Course Prerequisite</relationshipLabel>
+    <relationshipName>Course_Prerequisite</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

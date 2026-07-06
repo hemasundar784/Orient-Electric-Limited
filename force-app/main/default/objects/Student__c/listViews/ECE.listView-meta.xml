@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ECE</fullName>
+    <columns>NAME</columns>
+    <columns>mobile__c</columns>
+    <columns>email__c</columns>
+    <columns>branch__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>branch__c</field>
+        <operation>equals</operation>
+        <value>ECE</value>
+    </filters>
+    <label>ECE</label>
+</ListView>

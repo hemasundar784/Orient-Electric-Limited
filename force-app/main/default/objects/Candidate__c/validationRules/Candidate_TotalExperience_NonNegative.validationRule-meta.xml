@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Candidate_TotalExperience_NonNegative</fullName>
+    <active>true</active>
+    <description>experience of the candidate</description>
+    <errorConditionFormula>exp__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>exp__c</errorDisplayField>
+    <errorMessage>CAN-422-VR-EXP-NONNEG – Total Experience cannot be negative.</errorMessage>
+</ValidationRule>

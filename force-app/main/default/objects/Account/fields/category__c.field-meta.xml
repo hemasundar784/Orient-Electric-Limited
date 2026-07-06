@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>category__c</fullName>
+    <description>Indicates the customer&apos;s classification</description>
+    <inlineHelpText>Customer&apos;s classification</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>defaultCategory</valueSetName>
+    </valueSet>
+</CustomField>

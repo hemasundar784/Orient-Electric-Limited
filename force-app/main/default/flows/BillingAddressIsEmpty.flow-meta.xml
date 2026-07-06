@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <description>&quot;Error: The Billing Address cannot be blank. Please provide a  City&quot;</description>
+        <name>Show_Billing_City_Error</name>
+        <label>Show_Billing_City_Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>&quot; Error: The Billing Address cannot be blank. Please provide a  City&quot;</errorMessage>
+            <fieldSelection>BillingCity</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>&quot;Error: The Billing Address cannot be blank. Please provide a  Pincode&quot;</description>
+        <name>Show_Billing_PinCode_Error</name>
+        <label>Show_Billing_PinCode_Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>&quot; Error: The Billing Address cannot be blank. Please provide a  Pincode&quot;</errorMessage>
+            <fieldSelection>BillingPostalCode</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>&quot;Error: The Billing Address cannot be blank. Please provide a  Street&quot;</description>
+        <name>Show_Billing_Street_Error</name>
+        <label>Show_Billing_Street_Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>&quot;Error: The Billing Address cannot be blank. Please provide a  Street&quot;</errorMessage>
+            <fieldSelection>BillingStreet</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>if_billing_Street_is_Empty</name>
+        <label>if billing Street is Empty</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>streetisEmpty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingStreet</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Show_Billing_Street_Error</targetReference>
+            </connector>
+            <label>street is Empty</label>
+        </rules>
+        <rules>
+            <name>City_is_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingCity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Show_Billing_City_Error</targetReference>
+            </connector>
+            <label>City is Empty</label>
+        </rules>
+        <rules>
+            <name>PostolCode_is_Empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BillingPostalCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Show_Billing_PinCode_Error</targetReference>
+            </connector>
+            <label>PostolCode is Empty</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>BillingAddressIsEmpty {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BillingAddressIsEmpty</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>if_billing_Street_is_Empty</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BillingAddress</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>minAmount__c</fullName>
+    <description>Shows recruiters the minimum deposit value recorded across all transactions linked to this Bank Account.</description>
+    <inlineHelpText>Minimum deposit amount found.</inlineHelpText>
+    <label>Min Deposit Amount</label>
+    <summarizedField>DepositAccount__c.amount__c</summarizedField>
+    <summaryForeignKey>DepositAccount__c.bankId__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

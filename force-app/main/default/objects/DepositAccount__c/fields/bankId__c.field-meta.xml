@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bankId__c</fullName>
+    <description>This field will represent the Bank Account this Deposit is related to.</description>
+    <inlineHelpText>Corresponding Bank Account</inlineHelpText>
+    <label>Bank</label>
+    <referenceTo>BankAccount__c</referenceTo>
+    <relationshipLabel>Deposits</relationshipLabel>
+    <relationshipName>Deposits</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

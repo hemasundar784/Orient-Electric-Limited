@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_Executives_on_High_Value_Lost_Opportunity</fullName>
+        <description>Alert Executives on High Value Lost Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>annaromanav@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>hemasundar784879@agentforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/High_Value_Opportunity_Lost_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>ODAPSubmissionConfirmation</fullName>
+        <description>ODAP – Submission Confirmation to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>OrderApprovalTemplates/ODAPSubmissionConfirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>OSS73HighValueOrderNotify1Alert</fullName>
+        <description>OSS-73: High Value Order Notify 1 Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Flow/Sales_High_Value_Opp_Notify_1</template>
+    </alerts>
+    <alerts>
+        <fullName>OSS_73_High_Value_Order_Notify_2_Alert</fullName>
+        <description>OSS-73: High Value Order Notify 2 Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Flow/Sales_High_Value_Opp_Notify_2</template>
+    </alerts>
+    <alerts>
+        <fullName>OSS_73_High_Value_Order_Notify_3_Alert</fullName>
+        <description>OSS-73: High Value Order Notify 3 Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>CFO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Flow/Sales_High_Value_Opp_Notify_3</template>
+    </alerts>
+    <alerts>
+        <fullName>OdapL1ApprovalNotificationtoOwner</fullName>
+        <description>ODAP – Level 1 Approval Notification to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>OrderApprovalTemplates/ODAPLevel1ApprovalNotification</template>
+    </alerts>
+    <alerts>
+        <fullName>OdapL1RejectionNotificationtoOwner</fullName>
+        <description>ODAP – Level 1 Rejection Notification to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>OrderApprovalTemplates/ODAPLevel1RejectionNotification</template>
+    </alerts>
+    <alerts>
+        <fullName>OdapL2ApprovalNotificationtoOwner</fullName>
+        <description>ODAP – Level 2 Approval Notification to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>OrderApprovalTemplates/ODAPLevel2ApprovalNotification</template>
+    </alerts>
+    <alerts>
+        <fullName>OdapL2RejectionNotificationtoOwner</fullName>
+        <description>ODAP – Level 2 Rejection Notification to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>OrderApprovalTemplates/ODAPLevel2RejectionNotification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>OdapSetApprovedDate</fullName>
+        <description>Updates the Date Approved to the date when the discount approval is finalized.</description>
+        <field>approvedDate__c</field>
+        <formula>TODAY()</formula>
+        <name>ODAP – Set Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetLastApprovedBy</fullName>
+        <description>Updates the Last Approved By to the name of the user who approved the Stage 2.</description>
+        <field>approvedBy__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp; $User.LastName</formula>
+        <name>ODAP – Set Last Approved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetRecordTypeToClosedOrder</fullName>
+        <description>Updates the order type to Closed Order.</description>
+        <field>RecordTypeId</field>
+        <lookupValue>ClosedOrder</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>ODAP – Set Record Type to Closed Order</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetRejectionReason</fullName>
+        <description>Updates the Compelling Reason to “Discount Out of Range”.</description>
+        <field>rejectReason__c</field>
+        <formula>&quot;Discount Out of Range&quot;</formula>
+        <name>ODAP – Set Rejection Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetStageClosedWon</fullName>
+        <description>Updates the Opportunity Stage to Closed Won.</description>
+        <field>StageName</field>
+        <literalValue>Closed Won</literalValue>
+        <name>ODAP – Set Stage Closed Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetStatustoApproved</fullName>
+        <description>Updates the Status to Approved when discount approval is finalized.</description>
+        <field>status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>ODAP – Set Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetStatustoRecalled</fullName>
+        <description>Updates the Opportunity Status to Recalled.</description>
+        <field>status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>ODAP – Set Status to Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetStatustoRejected</fullName>
+        <description>Updates the Opportunity Status to Rejected.</description>
+        <field>status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>ODAP – Set Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetStatustoSubmitted</fullName>
+        <description>Updates the Status to Submitted.</description>
+        <field>status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>ODAP – Set Status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OdapSetSubmittedD</fullName>
+        <description>Updates the Date Submitted to Today’s Date.</description>
+        <field>submittedDate__c</field>
+        <formula>TODAY()</formula>
+        <name>ODAP – Set Submitted Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

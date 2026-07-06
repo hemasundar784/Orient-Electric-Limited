@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>apxio__Offered_Class__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The offered class this student is enrolling in</description>
+    <label>Offered Class</label>
+    <referenceTo>apxio__Class__c</referenceTo>
+    <relationshipLabel>Enrollments</relationshipLabel>
+    <relationshipName>Class_Enrollments</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

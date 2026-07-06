@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DepositAccount_Amount_NoDecrease</fullName>
+    <active>true</active>
+    <errorConditionFormula>amount__c &lt; PRIORVALUE(amount__c)</errorConditionFormula>
+    <errorDisplayField>amount__c</errorDisplayField>
+    <errorMessage>DEP-409-VR-AMT-NODEC – Amount cannot be decreased.</errorMessage>
+</ValidationRule>

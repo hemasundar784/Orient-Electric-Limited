@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>AssignNewName</name>
+        <label>Assign New Name</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NewName</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Adds the Account name as a prefix to related order records.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NewName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account.Name} &amp; &apos; - &apos;&amp; {!$Record.Name}</expression>
+    </formulas>
+    <interviewLabel>OSS-65: Prefix Order Name with Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>OSS-65: Prefix Order Name with Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>AssignNewName</targetReference>
+        </connector>
+        <filterFormula>AND( {!$Record.AccountId} &lt;&gt;null,
+ NOT(CONTAINS({!$Record.Name}, {!$Record.Account.Name}))
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

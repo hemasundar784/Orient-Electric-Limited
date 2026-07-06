@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>`
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>``
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+
+
+    <types>
+<members>Admin</members>
+<members>Back Office</members>
+<members>Sales Representative</members>
+<members>Service Representative</members>
+<name>Profile</name>
+</types>
+<types>
+<members>Banking_App</members>
+<members>Banking_App_Lightning</members>
+<members>OEL_Customer_Service_App</members>
+<members>OEL_Customer_Service_App_Lightning</members>
+<members>OEL_Sales_App_Lightning</members>
+<members>Recruitment_App</members>
+<members>Recruitment_App_Lightning</members>
+<members>Student_Dictionary</members>
+<members>Student_Dictionary_Lightning</members>
+<name>CustomApplication</name>
+</types>
+<types>
+<members>BankAccount__c</members>
+<members>Candidate__c</members>
+<members>CouponCodes__c</members>
+<members>DeliverySites__c</members>
+<members>DepositAccount__c</members>
+<members>LoanAccount__c</members>
+<members>Mortgage__c</members>
+<members>SalesOrder__c</members>
+<members>RequestForms__c</members>
+<members>Solutions__c</members>
+<members>Student__c</members>
+<members>Surverys__c</members>
+<members>TxnLineItems__c</members>
+<members>Transactions__c</members>
+<members>Warehouse__c</members>
+<name>CustomObject</name>
+</types>
+<types>
+<members>BankAccount__c</members>
+<members>Candidate__c</members>
+<members>CouponCodes__c</members>
+<members>DeliverySites__c</members>
+<members>DepositAccount__c</members>
+<members>LoanAccount__c</members>
+<members>Mortgage__c</members>
+<members>RequestForms__c</members>
+<members>SalesOrder__c</members>
+<members>Solutions__c</members>
+<members>Student__c</members>
+<members>Surverys__c</members>
+<members>Transactions__c</members>
+<members>TxnLineItems__c</members>
+<members>Warehouse__c</members>
+<name>CustomTab</name>
+</types>
+<types>
+<members>Account.totalContacts__c</members>
+<members>Account.recentOrder__c</members>
+<members>Account.totalPremiumOpportunities__c</members>
+<members>Account.ccNumber__c</members>
+<members>Account.UpsellOpportunity__c</members>
+<members>Account.SLASerialNumber__c</members>
+<members>Account.SLAExpirationDate__c</members>
+<members>Account.totalOpportunities__c</members>
+<members>Account.deliveryLocation__c</members>
+<members>Account.details__c</members>
+<members>Account.uniqueId__c</members>
+<members>Account.email__c</members>
+<members>Account.CustomerPriority__c</members>
+<members>Account.NumberofLocations__c</members>
+<members>Account.MaxTransactionAmount__c</members>
+<members>Account.totalTransactions__c</members>
+<members>Account.SLA__c</members>
+<members>Account.Active__c</members>
+<members>Account.Category__c</members>
+<members>Account.maxOpportunityAmount__c</members>
+<members>BankAccount__c.accnumber__c</members>
+<members>BankAccount__c.minAmount__c</members>
+<members>BankAccount__c.totalAmount__c</members>
+<members>BankAccount__c.totalPremiumDeposits__c</members>
+<members>BankAccount__c.maxAmount__c</members>
+<members>BankAccount__c.amount__c</members>
+<members>BankAccount__c.totalDeposits__c</members>
+<members>Campaign.totalCampaignMembers__c</members>
+<members>Candidate__c.tInterviewerId__c</members>
+<members>Candidate__c.exp__c</members>
+<members>Candidate__c.mInterviewerId__c</members>
+<members>Candidate__c.hInterviewerId__c</members>
+<members>Candidate__c.mobile__c</members>
+<members>Candidate__c.isofferreleased__c</members>
+<members>Candidate__c.skill__c</members>
+<members>Candidate__c.Status__c</members>
+<members>Candidate__c.email__c</members>
+<members>Case.PotentialLiability__c</members>
+<members>Case.SLAViolation__c</members>
+<members>Case.EngineeringReqNumber__c</members>
+<members>Case.Product__c</members>
+<members>Case.status__c</members>
+<members>Contact.uniqueId__c</members>
+<members>Contact.Level__c</members>
+<members>Contact.Languages__c</members>
+<members>CouponCodes__c.CouponCodes__c</members>
+<members>CouponCodes__c.code__c</members>
+<members>CouponCodes__c.discount__c</members>
+<members>DeliverySites__c.street__c</members>
+<members>DeliverySites__c.serial__c</members>
+<members>DeliverySites__c.Site__c</members>
+<members>DeliverySites__c.City__c</members>
+<members>DeliverySites__c.pincode__c</members>
+<members>DeliverySites__c.state__c</members>
+<members>DeliverySites__c.country__c</members>
+<members>DepositAccount__c.Account_Number__c</members>
+<members>DepositAccount__c.bankId__c</members>
+<members>DepositAccount__c.amount__c</members>
+<members>Lead.language__c</members>
+<members>Lead.SICCode__c</members>
+<members>Lead.NumberofLocations__c</members>
+<members>Lead.officialEmail__c</members>
+<members>Lead.Primary__c</members>
+<members>Lead.CurrentGenerators__c</members>
+<members>Lead.ProductInterest__c</members>
+<members>LoanAccount__c.type__c</members>
+<members>LoanAccount__c.bankId__c</members>
+<members>LoanAccount__c.status__c</members>
+<members>LoanAccount__c.isClosed__c</members>
+<members>Opportunity.rejectReason__c</members>
+<members>Opportunity.OrderNumber__c</members>
+<members>Opportunity.approvedDate__c</members>
+<members>Opportunity.approvedBy__c</members>
+<members>Opportunity.discount__c</members>
+<members>Opportunity.status__c</members>
+<members>Opportunity.CurrentGenerators__c</members>
+<members>Opportunity.MainCompetitors__c</members>
+<members>Opportunity.TrackingNumber__c</members>
+<members>Opportunity.submittedDate__c</members>
+<members>Opportunity.category__c</members>
+<members>Opportunity.initialApproverId__c</members>
+<members>Opportunity.DeliveryInstallationStatus__c</members>
+<members>Opportunity.totalLineItems__c</members>
+<members>Opportunity.finalApproverId__c</members>
+<members>Product2.couponId__c</members>
+<members>Product2.offerId__c</members>
+<members>Product2.ProductFamily__c</members>
+<members>RequestForms__c.accountId__c</members>
+<members>RequestForms__c.RequestForm__c</members>
+<members>RequestForms__c.products__c</members>
+<members>RequestForms__c.deliverydate__c</members>
+<members>RequestForms__c.pincode__c</members>
+<members>SalesOrder__c.type__c</members>
+<members>SalesOrder__c.SalesOrder__c</members>
+<members>SalesOrder__c.invoiceDate__c</members>
+<members>SalesOrder__c.OpportunityId__c</members>
+<members>SalesOrder__c.orderDate__c</members>
+<members>SalesOrder__c.orderNumber__c</members>
+<members>SalesOrder__c.amount__c</members>
+<members>SalesOrder__c.status__c</members>
+<members>Student__c.Branch__c</members>
+<members>Student__c.eeedesc__c</members>
+<members>Student__c.mobile__c</members>
+<members>Student__c.Subjects__c</members>
+<members>Student__c.ecedesc__c</members>
+<members>Student__c.email__c</members>
+<members>Student__c.csedesc__c</members>
+<members>Student__c.itdesc__c</members>
+<members>Surverys__c.isDeliverable__c</members>
+<members>Surverys__c.requestId__c</members>
+<members>Surverys__c.isAvailable__c</members>
+<members>Transactions__c.amount__c</members>
+<members>Transactions__c.totalLineItems__c</members>
+<members>Transactions__c.accountId__c</members>
+<members>Transactions__c.requestId__c</members>
+<members>Transactions__c.orderNumber__c</members>
+<members>TxnLineItems__c.quantity__c</members>
+<members>TxnLineItems__c.product__c</members>
+<members>TxnLineItems__c.TxnLineItem__c</members>
+<members>TxnLineItems__c.price__c</members>
+<members>TxnLineItems__c.transactionID__c</members>
+<members>User.maxDiscount__c</members>
+<members>User.supervisorId__c</members>
+<members>Warehouse__c.availableQty__c</members>
+<members>Warehouse__c.reservedQty__c</members>
+<name>CustomField</name>
+</types>
+    <version>67.0</version>
+</Package>

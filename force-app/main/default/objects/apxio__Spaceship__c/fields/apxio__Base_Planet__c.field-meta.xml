@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>apxio__Base_Planet__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The planet this spaceship is based on.</description>
+    <label>Base Planet</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>apxio__Planets</valueSetName>
+    </valueSet>
+</CustomField>

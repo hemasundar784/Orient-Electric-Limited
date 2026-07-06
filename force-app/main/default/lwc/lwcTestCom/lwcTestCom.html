@@ -1,0 +1,69 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <h2 class="slds-text-heading_small slds-m-bottom_medium">
+            Button menu with some <code>lightning-menu-item</code> components disabled.
+        </h2>
+
+        <!-- Dropdown Menu Section -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-button-menu class="green-theme-menu" alternative-text="Show menu" menu-alignment="auto" label="Menu_Options" onselect={handleMenuSelect}>
+                <lightning-menu-item value="BankAccounts" label="Go to Bank Accounts"></lightning-menu-item>
+                <lightning-menu-item value="DepositAccount__c" label="Go to Deposit Accounts"></lightning-menu-item>
+                <lightning-menu-item value="LoanAccount__c" label="Go to Loan Accounts" ></lightning-menu-item>
+                <lightning-menu-item value="Mortgage__c" label="Go to Mortgage List" ></lightning-menu-item>
+                <lightning-menu-item value="MenuItemFour" label="Menu Item Four" disabled></lightning-menu-item>
+                <lightning-menu-item value="goToAccount" label="Go to Accounts Home"></lightning-menu-item>
+            </lightning-button-menu>
+        </div>
+    </div>
+
+    <!-- User Input and Profile Section -->
+    <div class="slds-p-around_medium">
+        <lightning-input label="Name" type="text" onkeypress={handleChange}></lightning-input>
+        <p class="title"> Name--> <span class="content">{name}</span></p>
+        <p class="title"> person Data--> <span class="content">{personData}</span></p>
+        <p class="title"> Popular cars--> <span class="content">{popularCars}</span></p>
+        <p class="title"> recordId--> <span class="content">{handleCancelOrClose}</span></p>
+        
+        <!-- Loop Section -->
+        <template for:each={popularCars} for:item="car" for:index="counter">
+            <!-- FIXED: Class name formatting corrected -->
+            <p key={car} class="slds-text-title_caps">
+                {counter}--> <span class="content">{car}</span>
+            </p>
+        </template>
+        
+
+    <lightning-card title="Record Workspace" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            
+            <!-- Condition A: If the recordId exists, display it -->
+            <template lwc:if={recordId}>
+                <div class="slds-text-heading_small slds-text-color_success">
+                    Active Record ID: <strong>{recordId}</strong>
+                </div>
+            </template>
+
+            <!-- Condition B: If recordId is empty/undefined, show the warning -->
+            <template lwc:else>
+                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+                    <span class="slds-assistive-text">warning</span>
+                    <h2>Please select a record first.</h2>
+                </div>
+            </template>
+
+            <!-- Your Close Button -->
+            <div class="slds-var-m-top_medium">
+                <lightning-button 
+                    label="Check Status" 
+                    onclick={handleCancelOrClose}>
+                </lightning-button>
+            </div>
+
+        </div>
+    </lightning-card>   
+
+
+
+    </div>
+</template>

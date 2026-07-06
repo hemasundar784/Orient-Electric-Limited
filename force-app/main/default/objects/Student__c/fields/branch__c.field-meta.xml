@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>branch__c</fullName>
+    <description>Stores the branch the student belongs to</description>
+    <inlineHelpText>Student&apos;s branch of study.</inlineHelpText>
+    <label>Branch</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ECE</fullName>
+                <default>false</default>
+                <label>ECE</label>
+            </value>
+            <value>
+                <fullName>EEE</fullName>
+                <default>false</default>
+                <label>EEE</label>
+            </value>
+            <value>
+                <fullName>CSE</fullName>
+                <default>false</default>
+                <label>CSE</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

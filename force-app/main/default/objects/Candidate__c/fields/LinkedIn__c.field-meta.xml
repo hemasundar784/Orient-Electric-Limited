@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LinkedIn__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+   &apos;https://www.linkedin.com/search/results/all/?keywords&apos; &amp; Name,
+   &apos;Linkedin Search&apos;,
+   &apos;_blank&apos;
+)</formula>
+    <label>LinkedIn</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

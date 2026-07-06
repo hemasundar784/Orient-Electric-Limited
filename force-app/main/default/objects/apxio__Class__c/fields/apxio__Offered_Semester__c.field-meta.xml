@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>apxio__Offered_Semester__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The offered semester this offered class is a part of</description>
+    <label>Offered Semester</label>
+    <referenceTo>apxio__Offered_Semester__c</referenceTo>
+    <relationshipName>Offered_Classes</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSEStudent</fullName>
+    <active>true</active>
+    <description>Computer Science &amp; Engineering.</description>
+    <label>CSE Student</label>
+    <picklistValues>
+        <picklist>branch__c</picklist>
+        <values>
+            <fullName>CSE</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>subjects__c</picklist>
+        <values>
+            <fullName>CSE - 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSE - 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSE - 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSE - 4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

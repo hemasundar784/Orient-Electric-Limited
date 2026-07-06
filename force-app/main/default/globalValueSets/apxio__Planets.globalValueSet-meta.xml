@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Earth</fullName>
+        <default>true</default>
+        <label>Earth</label>
+    </customValue>
+    <customValue>
+        <fullName>Mars</fullName>
+        <default>false</default>
+        <label>Mars</label>
+    </customValue>
+    <customValue>
+        <fullName>Neptune</fullName>
+        <default>false</default>
+        <label>Neptune</label>
+    </customValue>
+    <customValue>
+        <fullName>Saturn</fullName>
+        <default>false</default>
+        <label>Saturn</label>
+    </customValue>
+    <customValue>
+        <fullName>Uranus</fullName>
+        <default>false</default>
+        <label>Uranus</label>
+    </customValue>
+    <masterLabel>Planets</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

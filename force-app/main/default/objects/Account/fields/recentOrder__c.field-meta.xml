@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>recentOrder__c</fullName>
+    <description>Displays the most recent opportunity linked to the customer.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The most recent opportunity linked to the customer.</inlineHelpText>
+    <label>Recent Order</label>
+    <length>120</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

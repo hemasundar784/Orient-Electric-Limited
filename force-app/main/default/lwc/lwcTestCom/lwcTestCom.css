@@ -1,0 +1,28 @@
+.lgc-bg {
+    background-color: rgb(12, 210, 236);
+}
+:host .green-theme-menu {
+    --slds-c-button-menu-dropdown-color-background: rgb(21, 28, 36);
+    --slds-c-button-menu-item-text-color: rgb(29, 248, 9);
+    --slds-c-button-menu-item-color-background-hover: rgb(40, 52, 66);
+    --slds-c-button-menu-item-text-color-hover: rgb(255, 255, 255);
+}
+
+.lgc-bg-inverse {
+    background-color: var(--slds-g-color-surface-container-inverse-1);
+}
+
+body{
+    text-align: center;
+    background-color: rgb(83, 240, 31);
+}
+
+.title{
+    margin-top: 2px rgb(5, 98, 138);
+    text-align: center;
+    font-size: xx-large;
+    background-color: rgb(31, 110, 110);
+    border-color: rgb(9, 201, 25);
+    border-radius: 10px;
+    padding: 10px;
+}

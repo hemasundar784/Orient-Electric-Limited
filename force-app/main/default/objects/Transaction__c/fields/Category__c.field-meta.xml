@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>Categorizes as Platinum, Gold, Silver, or Bronze based on transaction amount.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+   amount__c&gt;100000,
+   &apos;Platinum&apos;, 
+   IF(
+      amount__c&gt;50000,
+      &apos;Gold&apos;,
+      IF(
+         amount__c&gt;25000,
+         &apos;Silver&apos;, 
+         IF(
+            amount__c&gt;0,
+           &apos;Bronze&apos;,
+            null
+          )
+      )
+   )
+)</formula>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

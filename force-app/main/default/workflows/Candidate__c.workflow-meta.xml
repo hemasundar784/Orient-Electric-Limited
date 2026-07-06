@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CandidateRejectionMail</fullName>
+        <description>Candidate Rejection Mail</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>amulyas@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Recruitment/CandidateIfAnyOneRejects</template>
+    </alerts>
+    <alerts>
+        <fullName>Candidate_ApplicationConfirmation</fullName>
+        <description>Candidate Application Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>amulyas@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>hemasundar784879@agentforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Recruitment/InitialSubmissionConfirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>ManagerCandidateReview</fullName>
+        <description>Review for Manager - About the Candidate on Clearing the Technical round</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amulyas@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>annaromanav@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>hemasundar784879@agentforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Recruitment/Candidate_Review_Managar</template>
+    </alerts>
+    <alerts>
+        <fullName>OfferLetter</fullName>
+        <description>Offer Letter</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>amulyas@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Recruitment/OfferLetter</template>
+    </alerts>
+    <alerts>
+        <fullName>RECTechnicalRoundClear</fullName>
+        <description>Technical Round Clear</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>annaromanav@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>hemasundar784879@agentforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Recruitment/ClearTechnicalRound</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>RECSetReleaseOffer</fullName>
+        <description>Cleared All Rounds</description>
+        <field>isofferreleased__c</field>
+        <literalValue>1</literalValue>
+        <name>REC-Set Release Offer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RECSetStatusMgrCleared</fullName>
+        <description>Manager Approval Cleared</description>
+        <field>status__c</field>
+        <literalValue>Manager Done.</literalValue>
+        <name>REC-Set Status Mgr Cleared</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RECSetStatusParticipated</fullName>
+        <description>To check the candidate is participated</description>
+        <field>status__c</field>
+        <literalValue>Participated</literalValue>
+        <name>REC-Set Status Participated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RECSetStatusRecruited</fullName>
+        <description>successfully Recruited</description>
+        <field>status__c</field>
+        <literalValue>Recruited</literalValue>
+        <name>REC-Set Status Recruited</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RECSetStatusRejected</fullName>
+        <description>Candidate Rejected</description>
+        <field>status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>REC-Set Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>RECSetStatusTechCleared</fullName>
+        <description>Tech Round is Cleared</description>
+        <field>status__c</field>
+        <literalValue>Technical Done.</literalValue>
+        <name>REC-Set Status Tech Cleared</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

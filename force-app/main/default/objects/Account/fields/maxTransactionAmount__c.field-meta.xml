@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>maxTransactionAmount__c</fullName>
+    <description>This will show the highest transaction amount on this Customer.</description>
+    <inlineHelpText>Highest transaction amount on this Customer.</inlineHelpText>
+    <label>Max Transaction Amount</label>
+    <summarizedField>Transaction__c.amount__c</summarizedField>
+    <summaryForeignKey>Transaction__c.accountId__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <type>Summary</type>
+</CustomField>

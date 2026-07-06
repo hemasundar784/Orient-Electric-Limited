@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EEEStudent</fullName>
+    <active>true</active>
+    <description>Electrical and Electronics Engineering.</description>
+    <label>EEE Student</label>
+    <picklistValues>
+        <picklist>branch__c</picklist>
+        <values>
+            <fullName>EEE</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>subjects__c</picklist>
+        <values>
+            <fullName>EEE - 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EEE - 2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
