@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    4.1. LMS Communication: Create a folder in force-app\main\default, name it "messageChannels"
+    4.2. LMS Communication:  Create a file named "CommunicationChannel.messageChannel-meta.xml"
+-->
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Communication Channel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Channel for component communication</description>
+    <!-- 4.3 Create Message Fields tag to add attributes -->
+    <lightningMessageFields>
+        <!-- 4.4 Create an attribute to store the data sent -->
+        <fieldName>message</fieldName>
+        <description>Message text</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

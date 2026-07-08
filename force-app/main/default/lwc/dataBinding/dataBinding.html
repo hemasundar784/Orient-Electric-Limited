@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Data Binding" icon-name="custom:custom11">
+        <div class="container slds-box">
+            <lightning-button variant="brand" label="Get Phone" 
+                onclick={assignPhone} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="success" label="Yes Button" 
+                onclick={assignButtonLabel} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="destructive" label="No Button" 
+                onclick={assignButtonLabel} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand-outline" label="Toggle Car" 
+                onclick={toggleCar} class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="destructive-text" label="Toggle Insurance" 
+                onclick={toggleInsurance} class="slds-m-left_x-small"></lightning-button>
+        </div>
+        <div class="container slds-box">
+            <p class="sub-heading">Empty Variable</p>
+            <p class="title">Greeting: <span class="content">{greeting}</span></p>
+            <p class="sub-heading">Pre-defined Variable</p>
+            <p class="title">Person Name: <span class="content">{personName}</span></p>
+            <p class="sub-heading">Initialized on Component Creation</p>
+            <p class="title">Company: <span class="content">{company}</span></p>
+            <p class="sub-heading">Initialized on Component Initialization</p>
+            <p class="title">City: <span class="content">{city}</span></p>
+            <p class="sub-heading">Initialized on Button Click</p>
+            <p class="title">Phone: <span class="content">{phone}</span></p>
+            <p class="sub-heading">Initialized on Button Click with clicked button label.</p>
+            <p class="title">Clicked Button Label: <span class="content">{clickedButtonLabel}</span></p>
+            <p class="sub-heading">Initialized from input upon Enter Key.</p>
+            <lightning-input type="text" label="Country" onkeypress={captureCountry}></lightning-input>
+            <p class="title">Country: <span class="content">{country}</span></p>
+            <p class="sub-heading">Initialized from input upon change.</p>
+            <lightning-input type="text" label="State" onchange={captureState}></lightning-input>
+            <p class="title">State: <span class="content">{state}</span></p>
+            <p class="sub-heading">Conditional Rendering.</p>
+            <lightning-input type="checkbox" label="Enable/Disable" 
+                class="cbox" onchange={checkboxHandler}></lightning-input>
+            <p class="title">Is Checked: <span class="content">{isChecked}</span></p>
+            <template lwc:if={isChecked}>
+                <p class="slds-text-color_success slds-text-title_bold">Checkbox enabled.</p>
+            </template>
+            <template lwc:else>
+                <p class="slds-text-color_error slds-text-title_bold">Checkbox disabled.</p>
+            </template>
+            <p class="sub-heading">Iterative Rendering.</p>
+            <p class="title">Popular Cars: <span class="content">{popularCars}</span></p>
+            <template for:each={popularCars} for:item="car" for:index="counter">
+                <p key={car} class="slds-text-title_caps">
+                    {counter}: <span class="content">{car}</span>
+                </p>
+            </template>
+            <p class="sub-heading">Object Variable Rendering.</p>
+            <p class="title">Person: <span class="content">{person}</span></p>
+            <p class="title">Person: <span class="content">{person.describe}</span></p>
+            <p class="title">Person: <span class="content">{aboutPerson}</span></p>
+            <p class="title">Name: <span class="content">{person.name}</span></p>
+            <p class="title">Age: <span class="content">{person.age}</span></p>
+            <p class="title">City: <span class="content">{person.city}</span></p>
+            <p class="title">Car Status: <span class="content">{person.hasCar}</span></p>
+            <p class="title">Insurance: <span class="content">{person.hasInsurance}</span></p>
+        </div>
+        <div class="container slds-box">
+            <template lwc:if={recordId}>
+                <p class="slds-text-color_success slds-text-title_bold">
+                    Component loaded on a Record Page with Id: 
+                    <span class="content"> {recordId} </span>
+                </p>
+            </template>
+            <template lwc:else>
+                <p class="slds-text-color_error slds-text-title_bold">
+                    Component is not loaded on Record page.
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <h3 class="slds-text-title_caps slds-m-bottom_x-small">
+            Contacts
+            <template if:true={hasContacts}>({contactsCount})</template>
+        </h3>
+        <template if:true={contacts.length}>
+            <div style="max-height: 350px; overflow-y: auto;">
+                <ul class="slds-has-dividers_around-space">
+                    <template for:each={contacts} for:item="c">
+                        <li class="slds-item" key={c.Id}>
+                            <a data-id={c.Id} onclick={handleClick}>{c.Name}</a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        <template if:false={contacts.length}>
+            <p class="slds-p-around_small">No contacts found</p>
+        </template>
+    </lightning-card>
+</template>

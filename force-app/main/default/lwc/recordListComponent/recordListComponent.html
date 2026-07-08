@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Record List">
+        <div class="slds-p-around_medium">
+            <template if:true={objectApiName}>
+                <p class="slds-text-title_caps slds-m-bottom_small">
+                    {objectApiName} Records
+                </p>
+                <div class="scroll-container">
+                    <template if:true={records.length}>
+                        <ul class="slds-has-dividers_around-space">
+                            <template for:each={records} for:item="rec">
+                                <li key={rec.id} class="slds-item">
+                                    <a href="javascript:void(0);" data-id={rec.id}
+                                       onclick={handleRecordClick}>
+                                        {rec.label}
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <template if:false={records.length}>
+                        <p>No records found.</p>
+                    </template>
+                </div>
+            </template>
+            <template if:false={objectApiName}>
+                <p>Select an object to load records.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account Summary" icon-name="standard:account">
+        <template lwc:if={accountId}>
+            <div class="slds-p-around_medium">
+                <lightning-record-view-form record-id={accountId} object-api-name="Account">
+                    <lightning-layout multiple-rows>
+                        <template for:each={fields} for:item="field">
+                            <lightning-layout-item key={field} size="12" medium-device-size="6" large-device-size="3">
+                                <lightning-output-field field-name={field}></lightning-output-field>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </lightning-record-view-form>
+            </div>
+        </template>
+        <template lwc:else>
+            <div class="slds-p-around_medium slds-align_absolute-center">
+                <p class="slds-text-color_weak">
+                    Select an Account to view details.
+                </p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

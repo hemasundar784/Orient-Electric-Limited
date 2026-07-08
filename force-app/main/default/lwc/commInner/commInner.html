@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-box slds-m-around_large slds-box">
+        <lightning-card icon-name="custom:custom34" title="COMMUNICATIONS-INNER">
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="9">
+                    <lightning-input type="text" label="To Outer"
+                        class="toOuter"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="slds-p-left_small">
+                    <lightning-button variant="brand" label="Send To Outer"
+                        onclick={handleOuter}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="12">
+                    <p class="slds-text-heading_small">Data received from Outer: <b>{toReceiveOuter}</b></p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+</template>

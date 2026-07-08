@@ -1,0 +1,53 @@
+<template>
+    <lightning-card icon-name="custom:custom33" title="COMMUNICATIONS-OUTER">
+        <div class="slds-box slds-m-around_large slds-box">
+            <lightning-layout class="slds-m-bottom_small" multiple-rows>
+                <lightning-layout-item size="12">
+                    <p class="slds-text-heading_small">Data received from Outer(Pubsub): <b>{toReceivePubSub}</b></p>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <p class="slds-text-heading_small">Data received from Outer(LMS): <b>{toReceiveLMS}</b></p>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="9">
+                    <lightning-input type="text" label="To Inner" class="toInner"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="slds-p-left_small">
+                    <lightning-button variant="brand" label="Send To Inner" onclick={handleInner}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="9">
+                    <lightning-input type="text" label="To Other - Pub Sub" class="toPubSub"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="slds-p-left_small">
+                    <lightning-button variant="success" label="Send (PubSub)" onclick={handlePubSub}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="9">
+                    <lightning-input type="text" label="To Other - LMS" class="toLMS"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="slds-p-left_small">
+                    <lightning-button variant="destructive" label="Send (LMS)" onclick={handleLms}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="12">
+                    <p class="slds-text-heading_small">Data received from Inner: <b>{toReceiveInner}</b></p>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout vertical-align="end" class="slds-m-bottom_small">
+                <lightning-layout-item size="12">
+                    <c-comm-inner to-receive-outer={toSendInner} onrecieve={handleReceive}></c-comm-inner>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

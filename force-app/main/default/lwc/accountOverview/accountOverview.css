@@ -1,0 +1,22 @@
+.account-card {
+    background-color: #f4f6f9;
+    border-radius: 0.5rem;
+}
+.field-row {
+    display: flex;
+    align-items: center;
+}
+.label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    color: #3e3e3c;
+}
+.value {
+    font-weight: 500;
+    color: #0070d2;
+}
+.message {
+    font-weight: bold;
+    color: #c23934;
+    padding: 1rem;
+}

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Contact Finder" icon-name="standard:contact">
+        <div class="slds-box slds-m-around_large slds-p-around_large" style="min-height: 225px;">
+            <lightning-input type="search" label="Search Contact" onchange={handleSearch}></lightning-input>
+            <!-- Show results when available -->
+            <template lwc:if={hasResults}>
+                <template for:each={results} for:item="contact">
+                    <div key={contact.Id}>
+                        <lightning-button class="slds-text-title_caps slds-text-title_bold" variant="base" 
+                            label={contact.Name} value={contact.Id} onclick={handleSelect}> </lightning-button>
+                    </div>
+                </template>
+            </template>
+            <!-- Show message when no results -->
+            <template lwc:else>
+                <template lwc:if={queryTerm}>
+                    <p class="slds-text-color_error slds-m-top_small"> No contacts found </p>
+                </template>
+                <template lwc:else>
+                    <p class="slds-text-color_weak slds-m-top_small"> Enter atleast one character </p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>    
+</template>

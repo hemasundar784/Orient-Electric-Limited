@@ -1,0 +1,26 @@
+template{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    margin: 20px;
+}
+.heading{
+    font-size: large;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+}
+.sub-heading{
+    font-weight: bolder;
+    font-size: medium;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+.title{
+    font-size: small;
+}
+.content{
+    font-weight: bold;
+    font-style: italic;
+}

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Object Picker">
+        <div class="slds-p-around_medium">
+            <lightning-combobox name="objectPicker" label="Select Object"
+                value={selectedObject} placeholder="Search or select an object"
+                options={objectOptions} onchange={handleObjectChange}>
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    <lightning-card icon-name="standard:account" title="Demonstrate getRecord() Function">
+        <div class="slds-var-m-around_large">
+
+            <!-- Simple read-only view of fields loaded via getRecord() -->
+            <div class="slds-grid slds-wrap slds-gutters slds-var-m-top_small">
+
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-heading_small">Id</p>
+                    <p class="slds-text-heading_medium"><b>{retrievedRecord.id}</b></p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-heading_small">Name</p>
+                    <p class="slds-text-heading_medium"><b>{retrievedRecord.name}</b></p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-heading_small">Account Number</p>
+                    <p class="slds-text-heading_medium"><b>{retrievedRecord.accountNumber}</b></p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-heading_small">Phone</p>
+                    <p class="slds-text-heading_medium"><b>{retrievedRecord.phone}</b></p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-heading_small">Fax</p>
+                    <p class="slds-text-heading_medium"><b>{retrievedRecord.fax}</b></p>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-heading_small">Email</p>
+                    <p class="slds-text-heading_medium"><b>{retrievedRecord.email}</b></p>
+                </div>
+
+            </div>
+        </div>
+    </lightning-card>
+</template>

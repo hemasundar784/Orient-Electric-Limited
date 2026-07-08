@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="All Prospects" icon-name="standard:account">
+        <!-- Show spinner while loading -->
+        <template lwc:if={isLoading}>
+            <div class="slds-p-around_medium slds-align_absolute-center">
+                <lightning-spinner alternative-text="Loading prospects"></lightning-spinner>
+            </div>
+        </template>
+        <!-- Show data table when records exist -->
+        <template lwc:elseif={hasData}>
+            <div class="slds-p-around_small" style="min-height: 410px;">
+                <lightning-datatable key-field="recordId" data={visibleProspects}
+                    columns={columns} hide-checkbox-column></lightning-datatable>
+            </div>
+            <!-- Pagination controls -->
+            <div class="slds-m-top_small slds-align_absolute-center">
+                <lightning-button-icon icon-name="utility:back" alternative-text="Previous"
+                    onclick={handlePrev} disabled={isPrevDisabled}></lightning-button-icon>
+                <span class="slds-m-horizontal_small">
+                    Page {currentPage} of {totalPages}
+                </span>
+                <lightning-button-icon icon-name="utility:forward" alternative-text="Next"
+                    onclick={handleNext} disabled={isNextDisabled}>
+                </lightning-button-icon>
+            </div>
+        </template>
+        <!-- Show message when no records -->
+        <template lwc:elseif={noRecords}>
+            <p class="slds-p-around_medium slds-text-align_center 
+                    slds-text-heading_small slds-text-color_error">
+                No prospect records found.
+            </p>
+        </template>
+    </lightning-card>
+</template>

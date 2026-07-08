@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Search Candidates">
+        <div class="slds-p-around_small">
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item size="9" padding="horizontal-small">
+                    <lightning-input
+                        label="Search"
+                        onchange={handleChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="horizontal-small">
+                    <lightning-button
+                        label="Search"
+                        variant="brand"
+                        onclick={handleSearch}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!-- Count Display -->
+            <div class="slds-m-top_small slds-text-heading_small 
+                slds-text-color_weak slds-text-align_center">
+                {candidateCount} candidate(s) found
+            </div>
+        </div>
+    </lightning-card>
+</template>

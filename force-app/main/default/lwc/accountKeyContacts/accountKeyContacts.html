@@ -1,0 +1,25 @@
+<template>
+    <lightning-card icon-name="standard:contact" title="Key Contacts">
+            <!-- Loading -->
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+            <!-- Data -->
+            <template lwc:else>
+                <!-- Table -->
+                <template lwc:if={hasContacts}>
+                    <lightning-datatable key-field="Id" data={contacts} columns={columns} 
+                        hide-checkbox-column show-row-number-column>
+                    </lightning-datatable>
+                </template>
+                <!-- Empty State -->
+                <template lwc:else>
+                    <div class="slds-m-around_medium slds-box slds-align_absolute-center">
+                        <p class="slds-text-title_bold slds-text-color_error">
+                            No key contacts available for this account.
+                        </p>
+                    </div>
+                </template>
+            </template>
+    </lightning-card>
+</template>

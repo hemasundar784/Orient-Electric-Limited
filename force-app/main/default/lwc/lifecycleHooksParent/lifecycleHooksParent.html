@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="custom:custom55" title="LWC Lifecycle Hooks Demo">
+        <div class="slds-box slds-m-around_large slds-text-align_center">
+            <p class="slds-text-heading_small">PARENT COMPONENT</p>
+            <br/>
+            <!-- Display the count value -->
+            <p>COUNT: <b>{count}</b></p>
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <!-- Increment count to trigger re-render -->
+                <lightning-button class="slds-m-around_large" variant="brand"
+                    label="Increment Count" onclick={handleIncrement}></lightning-button>
+                <!-- Show / hide the child component -->
+                <lightning-button class="slds-m-around_large" variant="success"
+                    label="Toggle Child Component" onclick={handleToggleChild}></lightning-button>
+            </div>
+            <!-- Conditionally render the child component -->
+            <template lwc:if={showChild}>
+                <c-lifecycle-hooks-child></c-lifecycle-hooks-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,50 @@
+<template>
+    <lightning-card icon-name="custom:custom77" title="Demonstrate lightning-record-picker Tag">
+        <div class="slds-var-m-around_x-large slds-box">
+            <!--
+                lightning-record-picker:
+
+                • Provides a search + dropdown UI for picking a record.
+                • Uses Salesforce global search / lookup behavior under the hood.
+                • Here we are:
+                    - Searching Account records
+                    - Hiding the label (using variant="label-hidden")
+                    - Binding the selected record Id to selectedRecordId
+                    - Handling selection via onchange={handleRecordSelection}
+            -->
+            <lightning-record-picker
+                label="Select Prospect" icon-name="standard:account"
+                variant="label-hidden" placeholder="Search Prospects"
+                object-api-name={objectApiName} value={selectedRecordId}
+                onchange={handleRecordSelection}
+            ></lightning-record-picker>
+            <!--
+                Below area shows either:
+                • The selected Account details (via lightning-record-form), OR
+                • A message asking the user to select a prospect.
+            -->
+            <div class="slds-var-m-around_large slds-box">
+                <template lwc:if={selectedRecordId}>
+                    <!--
+                        lightning-record-form:
+                        • Uses LDS to fetch and display the selected Account.
+                        • object-api-name = Account
+                        • record-id = selectedRecordId (from record picker)
+                        • fields = fields defined in JS
+                        • mode="readonly" → behaves like a read-only details view
+                    -->
+                    <lightning-record-form
+                        object-api-name={objectApiName} record-id={selectedRecordId}
+                        density="compact" fields = {fields} mode="readonly"
+                    ></lightning-record-form>
+                </template>
+                 <!-- If no record is selected yet, show a helper message -->
+                <template lwc:else>
+                    <p class="slds-text-title_bold slds-text-color_destructive slds-align_absolute-center">
+                        Select a prospect to display it's details.
+                    </p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

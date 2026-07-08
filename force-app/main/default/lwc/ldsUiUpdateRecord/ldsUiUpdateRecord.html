@@ -1,0 +1,54 @@
+<template>
+    <lightning-card icon-name="standard:account" title="Demonstrate updateRecord() Function">
+        <div class="slds-var-m-around_medium slds-box">
+            <!-- Show the form only after the record is loaded -->
+            <template lwc:if={accountRecord.data}>
+                <!-- Use a simple 2-column layout for better UI -->
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Id (read-only) -->
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_small">
+                        <lightning-input label="Id" type="text"
+                            value={accountRecord.data.fields.Id.value} disabled></lightning-input>
+                    </div>
+                    <!-- Name -->
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_small">
+                        <lightning-input label="Name" data-field="Name" type="text"
+                            value={accountRecord.data.fields.Name.value}></lightning-input>
+                    </div>
+                    <!-- Account Number -->
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_small">
+                        <lightning-input label="Account Number" data-field="AccountNumber" type="text"
+                            value={accountRecord.data.fields.AccountNumber.value}></lightning-input>
+                    </div>
+                    <!-- Phone -->
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_small">
+                        <lightning-input label="Phone" data-field="Phone" type="tel"
+                            value={accountRecord.data.fields.Phone.value}></lightning-input>
+                    </div>
+                    <!-- Fax -->
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_small">
+                        <lightning-input label="Fax" data-field="Fax" type="tel"
+                            value={accountRecord.data.fields.Fax.value}></lightning-input>
+                    </div>
+                    <!-- Email -->
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_small">
+                        <lightning-input label="Email" data-field="email__c" type="email" 
+                            value={accountRecord.data.fields.email__c.value}> </lightning-input>
+                    </div>
+                </div>
+                <!-- Update button -->
+                <div class="slds-align_absolute-center slds-var-m-top_medium">
+                    <lightning-button variant="brand" label="Update Record" 
+                        onclick={handleUpdate}></lightning-button>
+                </div>
+
+            </template>
+            <!-- Optional: show a fallback if record failed to load -->
+            <template lwc:else>
+                <p class="slds-text-color_error slds-text-align_center">
+                    Unable to load record. Please check the page configuration.
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

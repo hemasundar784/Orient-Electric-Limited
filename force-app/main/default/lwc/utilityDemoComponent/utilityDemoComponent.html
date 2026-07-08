@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Utility Demo Component" icon-name="custom:custom33">
+        <div class="slds-box slds-var-m-around_large">
+
+            <!-- Inherited default values from coreUtilityBase -->
+            <p>
+                Default SObject: <b>{defaultSObject}</b><br/>
+                Default Record Type: <b>{defaultRecordType}</b><br/>
+                Default App: <b>{defaultAppName}</b>
+            </p>
+            <br/>
+
+            <!-- Buttons generated from configuration -->
+            <template for:each={buttonConfigs} for:item="btn">
+                <lightning-button
+                    key={btn.name} label={btn.label}
+                    variant={btn.variant} name={btn.name}
+                    onclick={handleAction}>
+                </lightning-button>
+                &nbsp;
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

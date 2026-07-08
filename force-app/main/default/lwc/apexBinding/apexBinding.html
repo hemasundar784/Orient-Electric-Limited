@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Apex Data Binding" icon-name="custom:custom13">
+        <!-- Reactive Data Section -->
+        <div class="slds-var-m-around_medium slds-var-p-around_medium">
+            <p class="slds-text-heading_small">Reactive Apex Data</p>
+            <!-- Property wire -->
+            <p class="slds-text-title">Message → <b>{wiredMessage.data}</b></p>
+            <!-- Function wire -->
+            <p class="slds-text-title">Greeting → <b>{greetingText}</b></p>
+        </div>
+        <!-- Calculator Section -->
+        <div class="slds-var-m-around_x-large slds-box">
+            <!-- Inputs -->
+            <lightning-input type="number" name="firstNumber" label="Number 1" 
+                value={firstNumber} onchange={handleInputChange}></lightning-input>
+            <lightning-input type="number" name="secondNumber" label="Number 2" 
+                value={secondNumber} onchange={handleInputChange}></lightning-input>
+            <!-- Operation -->
+            <lightning-combobox name="operation" label="Operation" value={selectedOperation} 
+                options={operationOptions} onchange={handleInputChange}></lightning-combobox>
+            <!-- Actions -->
+            <div class="slds-var-p-around_medium slds-align_absolute-center">
+                <lightning-button label="Calculate" variant="success" 
+                    onclick={handleCalculate}></lightning-button>
+                <lightning-button label="Clear" variant="destructive" 
+                     onclick={handleReset} class="slds-m-left_small"></lightning-button>
+            </div>
+            <!-- Output -->
+            <div class="slds-var-m-around_large slds-align_absolute-center slds-text-heading_medium">
+                <template lwc:if={result}>
+                    <p class="slds-text-color_success">Result → <b>{result}</b></p>
+                </template>
+                <template lwc:if={errorMessage}>
+                    <p class="slds-text-color_error">Error → <b>{errorMessage}</b></p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

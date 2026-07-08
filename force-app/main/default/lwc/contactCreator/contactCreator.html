@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Create Contact" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <!-- Result Message -->
+            <template lwc:if={message}>
+                <div class="slds-m-bottom_medium slds-align_absolute-center">
+                    <p class={messageClass}>{message}</p>
+                </div>
+            </template>
+            <!-- Account Id -->
+            <lightning-input type="text" label="Account Id" value={recordId} 
+                lwc:if={recordId} disabled></lightning-input>
+            <!-- First Name -->
+            <lightning-input type="text" label="First Name" value={contact.firstname} 
+                data-field="firstname" onchange={handleChange}></lightning-input>
+            <!-- Last Name (commonly required) -->
+            <lightning-input type="text" label="Last Name" value={contact.lastname} 
+                data-field="lastname" onchange={handleChange} required></lightning-input>
+            <!-- Phone -->
+            <lightning-input type="tel" label="Phone" value={contact.phone} 
+                data-field="phone" onchange={handleChange}></lightning-input>
+            <!-- Fax -->
+            <lightning-input type="text" label="Fax" value={contact.fax} 
+                data-field="fax" onchange={handleChange}></lightning-input>
+            <!-- Email -->
+            <lightning-input type="email" label="Email" value={contact.email} 
+                data-field="email" onchange={handleChange}></lightning-input>
+            <!-- Create Button -->
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button variant="brand" label="Create Contact" 
+                    onclick={handleCreate}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-card icon-name="standard:account" title="Demonstrate createRecord()">
+        <div class="slds-var-m-around_small slds-box">
+            <!-- Input: Name -->
+            <div class="slds-var-m-bottom_small">
+                <lightning-input label="Name" name="name" type="text" 
+                    value={name} required onchange={captureInputs}></lightning-input>
+            </div>
+            <!-- Input: Account Number -->
+            <div class="slds-var-m-bottom_small">
+                <lightning-input
+                    label="Account Number" name="accountNumber" type="text"
+                    value={accountNumber} onchange={captureInputs}></lightning-input>
+            </div>
+            <!-- Input: Phone -->
+            <div class="slds-var-m-bottom_small">
+                <lightning-input label="Phone" name="phone" type="tel"
+                    value={phone} required onchange={captureInputs}></lightning-input>
+            </div>
+            <!-- Input: Fax -->
+            <div class="slds-var-m-bottom_small">
+                <lightning-input label="Fax" name="fax" type="tel"
+                    value={fax} onchange={captureInputs}></lightning-input>
+            </div>
+            <!-- Input: Email -->
+            <div class="slds-var-m-bottom_small">
+                <lightning-input label="Email" name="email" type="email"
+                    value={email} required onchange={captureInputs}></lightning-input>
+            </div>
+            <!-- Buttons -->
+            <div class="slds-align_absolute-center slds-var-m-top_small">
+                <lightning-button variant="brand-outline" label="Submit"
+                    class="slds-var-m-around_small" onclick={submitHandler}></lightning-button>
+                <lightning-button
+                    variant="destructive-text" label="Clear" 
+                    class="slds-var-m-around_small" onclick={clearHandler}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

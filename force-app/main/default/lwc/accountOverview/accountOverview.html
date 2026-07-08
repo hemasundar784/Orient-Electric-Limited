@@ -1,0 +1,16 @@
+<template>
+    <div class="account-card slds-p-around_medium slds-box slds-theme_default">
+        <lightning-layout multiple-rows>
+            <template for:each={accountFields} for:item="field">
+                <lightning-layout-item key={field.label} size={field.size} class="slds-p-vertical_x-small">
+                    <div class="field-row">
+                        <lightning-icon icon-name={field.icon} size="x-small" 
+                            class="slds-m-right_small"></lightning-icon>
+                        <span class="label">{field.label}:</span>
+                        <span class="value">{field.value}</span>
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </div>
+</template>

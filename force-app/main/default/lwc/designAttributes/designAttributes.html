@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="custom:custom65" title={cardTitle}>
+        <div class="slds-var-m-around_medium slds-box content-box">
+            
+            <!-- Show a text value passed from App Builder -->
+            <p class="slds-text-heading_small">
+                Design Attribute Value: <b>{displayText}</b>
+            </p>
+
+            <!-- Show an image configured by the admin -->
+            <template if:true={imageUrl}>
+                <img src={imageUrl} alt="Configured Image" height="180" width="140" />
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
