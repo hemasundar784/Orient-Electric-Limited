@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date__c</fullName>
+    <label>Start Date</label>
+    <description>The date on which the project is scheduled to begin.</description>
+    <inlineHelpText>Enter the planned start date for this project.</inlineHelpText>
+    <type>Date</type>
+    <required>false</required>
+</CustomField>

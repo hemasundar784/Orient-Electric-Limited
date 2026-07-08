@@ -1,0 +1,130 @@
+.datatable-container {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.datatable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.datatable-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0c5460;
+}
+
+.datatable-info {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.datatable-wrapper {
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.no-records {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    font-size: 1rem;
+}
+
+.error-container {
+    margin-bottom: 1rem;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.pagination-button {
+    margin: 0 0.25rem;
+}
+
+.page-buttons {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0 0.5rem;
+}
+
+.page-button {
+    min-width: 2rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.page-button:hover {
+    background-color: #e5e5e5;
+    border-color: #999;
+}
+
+.page-button.active {
+    background-color: #0070d2;
+    color: white;
+    border-color: #0070d2;
+    font-weight: 600;
+}
+
+.page-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.page-info {
+    font-size: 0.875rem;
+    color: #666;
+    margin-left: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .datatable-container {
+        padding: 0.75rem;
+    }
+
+    .datatable-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .pagination-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .pagination-controls {
+        width: 100%;
+    }
+
+    .page-info {
+        margin-left: 0;
+    }
+}

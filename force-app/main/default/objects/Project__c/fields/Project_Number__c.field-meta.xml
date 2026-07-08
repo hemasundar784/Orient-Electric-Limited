@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Number__c</fullName>
+    <label>Project Number</label>
+    <description>Auto-generated unique identifier for each project record.</description>
+    <inlineHelpText>Automatically assigned when the project is created. Format: PRJ-0001.</inlineHelpText>
+    <type>AutoNumber</type>
+    <displayFormat>PRJ-{0000}</displayFormat>
+    <startingNumber>1</startingNumber>
+</CustomField>

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title={title} icon-name="standard:datatable">
+        <div class="slds-var-m-around_medium">
+            <c-reusable-data-table
+                title={title}
+                object-name={objectName}
+                field-list={fieldList}
+                page-size={pageSize}
+                enable-sorting={enableSorting}
+                enable-pagination={enablePagination}
+                enable-inline-edit={enableInlineEdit}
+                enable-delete={enableDelete}
+            >
+            </c-reusable-data-table>
+        </div>
+    </lightning-card>
+</template>

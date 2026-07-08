@@ -1,0 +1,93 @@
+<template>
+    <div class="datatable-container">
+        <div class="datatable-header">
+            <h2 class="datatable-title">{title}</h2>
+            <div class="datatable-info">
+                <span if:true={hasRecords}>{pageInfo}</span>
+                <span if:false={hasRecords}>No records found</span>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+
+        <!-- Error Message -->
+        <div if:true={error} class="error-container">
+            <lightning-alert type="error" title="Error" message={error}></lightning-alert>
+        </div>
+
+        <!-- Data Table -->
+        <div if:true={hasRecords} class="datatable-wrapper">
+            <lightning-datatable
+                key-field="Id"
+                data={visibleRecords} 
+                columns={columns}
+                draft-values={draftValues}
+                onsave={handleSave}
+                onsort={handleSort}
+                onrowaction={handleRowAction}
+                sorted-by={sortedBy}
+                sorted-direction={sortDirection}
+                hide-checkbox-column="true"
+            >
+            </lightning-datatable>
+        </div>
+
+        <!-- No Records Message -->
+        <div if:false={hasRecords} class="no-records">
+            <p>No records to display</p>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div if:true={enablePagination} class="pagination-container">
+            <div class="pagination-controls">
+                <lightning-button
+                    label="Previous"
+                    icon-name="utility:chevronleft"
+                    disabled={isPreviousDisabled}
+                    onclick={handlePreviousPage}
+                    class="pagination-button"
+                >
+                </lightning-button>
+
+                <div class="page-buttons">
+                    <template for:each={pageNumbers} for:item="page">
+                        <template if:true={page.isActive}>
+                            <button
+                                key={page.number}
+                                class="page-button active"
+                                onclick={handleGoToPage}
+                                data-page={page.number}
+                            >
+                                {page.number}
+                            </button>
+                        </template>
+                        <template if:false={page.isActive}>
+                            <button
+                                key={page.number}
+                                class="page-button"
+                                onclick={handleGoToPage}
+                                data-page={page.number}
+                            >
+                                {page.number}
+                            </button>
+                        </template>
+                    </template>
+                </div>
+
+                <lightning-button
+                    label="Next"
+                    icon-name="utility:chevronright"
+                    icon-position="right"
+                    disabled={isNextDisabled}
+                    onclick={handleNextPage}
+                    class="pagination-button"
+                >
+                </lightning-button>
+            </div>
+            <div class="page-info">
+                Page {currentPage} of {totalPages}
+            </div>
+        </div>
+    </div>
+</template>

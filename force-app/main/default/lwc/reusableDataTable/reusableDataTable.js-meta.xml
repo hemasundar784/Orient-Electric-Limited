@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Reusable DataTable</masterLabel>
+    <description>A reusable datatable LWC with sorting, pagination, and inline editing</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+            <property name="title" type="String" label="Table Title" description="Title to display above the table" default="Data Table" />
+            <property name="objectName" type="String" label="Object Name" description="Salesforce object to query (e.g., Account, Contact)" default="Account" />
+            <property name="fieldList" type="String" label="Field List" description="Comma-separated list of field names to display" default="Id,Name,Phone" />
+            <property name="pageSize" type="Integer" label="Page Size" description="Number of records to display per page" default="10" />
+            <property name="enableSorting" type="Boolean" label="Enable Sorting" default="true" />
+            <property name="enablePagination" type="Boolean" label="Enable Pagination" default="true" />
+            <property name="enableInlineEdit" type="Boolean" label="Enable Inline Edit" default="true" />
+            <property name="enableDelete" type="Boolean" label="Enable Delete" default="true" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
